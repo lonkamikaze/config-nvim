@@ -1,0 +1,5 @@
+# nvim configs
+*.vim          text
+*.lua          text
+# git configs
+.git*          text

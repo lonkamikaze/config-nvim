@@ -11,7 +11,11 @@ vim.cmd('PaqSync')                    -- run on config change
 
 require('lualine').setup()            -- powerline alike
                                       -- @see https://github.com/ryanoasis/nerd-fonts/releases
-require('nvim-treesitter').setup()    -- syntax highlighting, code completion
+require('nvim-treesitter').setup {    -- syntax highlighting, code completion
+	ensure_installed = {'all'},
+	sync_install     = true,
+	auto_install     = true,
+}
 
 -- colour scheme
 vim.g.codedark_transparent = 1        -- transparent background

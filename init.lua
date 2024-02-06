@@ -9,8 +9,16 @@ require 'paq' {
 }
 vim.cmd('PaqSync')                    -- run on config change
 
-require('lualine').setup()            -- powerline alike
+require('lualine').setup {            -- powerline alike
                                       -- @see https://github.com/ryanoasis/nerd-fonts/releases
+	options = {
+		path = 1,             -- show relative path, shorten $HOME/ to ~/
+		symbols = {
+			unix = '',   -- nf-linux-freebsd (\uf30c)
+		},
+	},
+}
+
 require('nvim-treesitter').setup {    -- syntax highlighting, code completion
 	ensure_installed = {'all'},
 	sync_install     = true,
